@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FashionFlip:Outfit Generator</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="javascriptdress.js"></script>
+		 <style>
+        #imageContainer {
+            display: none; /* Hide the image by default */
+            text-align: center;
+            margin-top: 20px; /* Add some space above the image container */
+        }
+
+       #flipkartButton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff9f00;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+       
+
+        
+        #flipkartText {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 5px;
+        }
+
+        #flipkart{
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #FFFFFF;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            /*margin: 5px;*/
+        }
+    
+  body {
+background-color: #2874f0;
+}
+    </style>
+	</head>
+	<body>
+
+	
+
+    <div id="flipkartText">Customize according to your preferred Style</div>
+<br><br>
+			<div class="options">
+			<table class="styletable">
+			<div class="neckline">
+					<tr class="neat">
+					<th></th>
+					<th></th>
+					</tr>
+					<tr class="neat">
+						
+					<th class="left" id=flipkart>Neckline Style:</th>
+							<th><select id="neckStyle" onchange="neckDisplay()">
+								<option value="neck/asymmetric.jpg">Asymmetric</option>
+								<option value="neck/bateau.jpg">Bateau</option>
+								<option value="neck/cowl.jpg">Cowl</option>
+								<option value="neck/grecian.jpg">Grecian</option>
+								<option value="neck/halter.jpg">Halter</option>
+								<option value="neck/halterstrap.jpg">Halter Strap</option>
+								<option value="neck/highneck.jpg">High Neck</option>
+								<option value="neck/illusion.jpg">Illusion</option>
+								<option value="neck/jewel.jpg">Jewel</option>
+								<option value="neck/offshoulder.jpg">Offshoulder</option>
+								<option value="neck/queenanne.jpg">Queen Anne</option>
+								<option value="neck/sabrina.jpg">Sabrina</option>
+								<option value="neck/scoop.jpg">Scoop</option>
+								<option value="neck/spaghettistrap.jpg">Spaghetti Strap</option>
+								<option value="neck/square.jpg" selected>Square</option>
+								<option value="neck/straight.jpg">Straight</option>
+								<option value="neck/sweetheart.jpg">Sweetheart</option>
+								<option value="neck/vneck.jpg">V Neck</option>
+							</select></th>
+							
+					</tr>
+			</div>
+			<div class="sleeve">
+				<tr class="neat">
+				<th class="left" id=flipkart>Sleeve Style:</th>
+				<th><select id="sleeveStyle" onchange="sleeveDisplay()">
+				<option value="sleeve/batwing.jpg">Batwing</option>
+				<option value="sleeve/bell.jpg">Bell</option>
+				<option value="sleeve/bishop.jpg">Bishop</option>
+				<option value="sleeve/bracelet.jpg">Bracelet</option>
+				<option value="sleeve/butterfly.jpg">Butterfly</option>
+				<option value="sleeve/buttontab.jpg">Button Tab</option>
+				<option value="sleeve/cape.jpg">Cape</option>
+				<option value="sleeve/circularcap.jpg">Circular Cap</option>
+				<option value="sleeve/cowl.jpg">Cowl</option>
+				<option value="sleeve/dropshoulder.jpg">Drop Shoulder</option>
+				<option value="sleeve/lantern.jpg">Lantern</option>
+				<option value="sleeve/layered.jpg">Layered</option>
+				<option value="sleeve/marie.jpg">Marie</option>
+				<option value="sleeve/muttonleg.jpg">Mutton Leg</option>
+				<option value="none.jpg">None</option>
+				<option value="sleeve/peasant.jpg" selected>Peasant</option>
+				<option value="sleeve/puffed.jpg">Puffed</option>
+				<option value="sleeve/raglan.jpg">Raglan</option>
+				<option value="sleeve/rollup.jpg">Rollup</option>
+				<option value="sleeve/shirt.jpg">Shirt</option>
+				</select></th>
+				<!-- <th><button onclick="randomSleeve()">RANDOMIZE</button></th> -->
+				</tr>
+			</div>
+			<div id="dress">
+			<tr class="neat">
+			<th class="left topSwitcher" id=flipkart><p id="swap">Dress Type:</p></th>
+				 <th><select id="DressType" onchange="dressDisplay()">
+					  <option value="dress/A.jpg">A Shaped</option>				
+					  <option value="dress/Balloon.jpg">Balloon</option>
+					  <option value="dress/Bell.jpg">Bell</option>
+					  <option value="dress/Charleston.jpg">Charleston</option>
+					  <option value="dress/Empire.jpg" selected>Empire</option>
+					  <option value="dress/H.jpg">H Shaped</option>
+					  <option value="dress/I.jpg">I Shaped</option>
+					  <option value="dress/Princess.jpg">Princess</option>
+					  <option value="dress/Trapeze.jpg">Trapeze</option>
+					  <option value="dress/Triangle.jpg">Triangle</option>
+					  <option value="dress/T.jpg">T Shaped</option>
+					  <option value="dress/V.jpg">V Shaped</option>
+					  <option value="dress/X.jpg">X Shaped</option>
+					  <option value="dress/Y.jpg">Y Shaped</option>
+				</select> </th>
+				</tr>
+			</div>
+			<div class="top">
+			
+			</div>
+			<p></p>
+			<div id="Shoes">
+			<tr class="neat">
+			<th class="left" id=flipkart>Shoe Style:</th>
+				<th><select id="shoeStyle" onchange="shoeDisplay()">
+					<option value="shoes/AnkleStrap.jpg">Ankle Strap</option>
+					<option value="shoes/Ballerina.jpg">Ballerina</option>
+					<option value="shoes/Bicolor.jpg">Bicolor</option>
+					<option value="shoes/Chelsea.jpg">Chelsea</option>
+					<option value="shoes/Desert.jpg">Desert</option>
+					<option value="shoes/Espadrilla.jpg">Espadrilla</option>
+					<option value="shoes/FlipFlop.jpg">FlipFlop</option>
+					<option value="shoes/Kitten.jpg">Kitten</option>
+					<option value="shoes/Loafer.jpg">Loafer</option>
+					<option value="shoes/lobsterclaw.jpg">Lobsterclaw</option>
+					<option value="shoes/Maryjane.jpg">Maryjane</option>
+					<option value="shoes/Mocassin.jpg">Mocassin</option>
+					<option value="shoes/Monk.jpg">Monk</option>
+					<option value="shoes/Mule.jpg" selected>Mule</option>
+					<option value="shoes/RubySlipper.jpg">Ruby Slipper</option>
+					<option value="shoes/spool.jpg">Spool</option>
+					<option value="shoes/Stiletto.jpg">Stiletto</option>
+					<option value="shoes/Tstrap.jpg">Tstrap</option>
+					<option value="shoes/Wedge.jpg">Wedge</option>
+					
+				</select></th>
+			
+				</tr>
+			</div>
+			</table>
+			</div>
+		<div class="outfitdisplay">
+		<table class="tableborder">
+		  <tr>
+			<th></th>
+			<th id="neckImage">Neckline</th>
+			<th></th>
+		  </tr>
+		  <tr>
+			<th id="sleeveImage2" class="sleeveFlip">Sleeve</th>
+			<th id="dressImage">Dress</th>
+			<th id="sleeveImage">Sleeve</th>
+			 
+		  </tr>
+		  <tr>
+			<th></th>
+			<th id ="shoeImage">Shoes</th>
+			<th></th>
+		  </tr>
+		  </table>
+		  </div>
+
+
+		
+
+
+    <div style="text-align: center;">
+ 
+        <button id="showImageButton" style="background-color: #ff9f00; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 18px;font-weight: bold; cursor: pointer;">My Outfit of the Day</button>
+    
+    </div>
+    
+    <div id="imageContainer">
+        <img id="displayedImage" src="C:\Users\aayush\Downloads\FashionFlip by Team-Aariaa_Flipkart GRiD SDE Track\FashionFlip_Project Code\shoes\diwali_outfit.jpg"alt="Displayed Image" style="max-width: 100%; height: 60%;">
+
+        <img id="displayedImage" src="C:\Users\aayush\Downloads\FashionFlip by Team-Aariaa_Flipkart GRiD SDE Track\FashionFlip_Project Code\shoes\rakhi.jpg"alt="Displayed Image" style="max-width: 100%; height: 60%;">
+
+         <img id="displayedImage" src="C:\Users\aayush\Downloads\FashionFlip by Team-Aariaa_Flipkart GRiD SDE Track\FashionFlip_Project Code\shoes\sandal.jpg"alt="Displayed Image" style="max-width: 100%; height: 60%;">
+
+          <div style="text-align: center;">
+          <a id="flipkartButton" href="https://www.flipkart.com/pink-city-mart-women-fit-flare-blue-dress/p/itmf61d5abf1615a?pid=DREGND4SZZGQNA67&lid=LSTDREGND4SZZGQNA67XJRC93&marketplace=FLIPKART&q=rakhi%20dresses%20women&sattr[]=color&sattr[]=size&st=size"target="_blank">Let's Buy on Flipkart</a>
+     <!--  </div> -->
+
+        <!--  <div style="text-align: center;"> -->
+          <a id="flipkartButton" href="https://www.flipkart.com/aarohi-creations-lumba-rakhi-chawal-roli-pack-set/p/itm403eb6716aa19?pid=RAKG4ZZ5XCPD8QYA&lid=LSTRAKG4ZZ5XCPD8QYAWEOUNH&marketplace=FLIPKART&q=rakhi+purse&store=bro%2Fzwb%2Fqmi&srno=s_1_6&otracker=search&otracker1=search&fm=Search&iid=890a9c97-7384-4231-aad5-2d028d9f4005.RAKG4ZZ5XCPD8QYA.SEARCH&ppt=sp&ppn=sp&ssid=bv1bcdmte80000001692559677875&qH=15c29f8028821d9f"target="_blank">Let's Buy on Flipkart</a>
+     <!--  </div> -->
+
+    <!-- <div style="text-align: right;"> -->
+          <a id="flipkartButton" href="https://www.flipkart.com/orinicofly-women-pink-heels/p/itm8de5ee8139c1d?pid=SNDGDHYJD9FHAHXZ&lid=LSTSNDGDHYJD9FHAHXZDZARWN&marketplace=FLIPKART&q=women+heels+sandal+traditional&store=osp%2Fiko%2F6q1&srno=s_1_6&otracker=search&otracker1=search&fm=Search&iid=518719fc-0ad2-43a2-b7eb-4121921a0378.SNDGDHYJD9FHAHXZ.SEARCH&ppt=sp&ppn=sp&ssid=adqxg0l4jk0000001692559759211&qH=8b206e2dac84ece9"target="_blank">Let's Buy on Flipkart</a>
+      </div>
+    </div>
+
+
+
+
+
+       
+
+    <script>
+       
+        const showImageButton = document.getElementById('showImageButton');
+        const imageContainer = document.getElementById('imageContainer');
+
+       
+        showImageButton.addEventListener('click', () => {
+           
+            imageContainer.style.display = 'block';
+        });
+    </script>
+
+	</body>
+
+</html>
